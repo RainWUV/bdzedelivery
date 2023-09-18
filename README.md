@@ -9,7 +9,7 @@ Este é o README.md para documentar a estrutura do banco de dados do aplicativo 
 O banco de dados é composto pelas seguintes tabelas:
 
 1. **Usuários/Clientes:**
-   - ID do Usuário (Chave Primária)
+   - cod_cliente (Chave Primária)
    - Login
    - Senha (criptografada)
    - Nome
@@ -19,74 +19,67 @@ O banco de dados é composto pelas seguintes tabelas:
    - Telefone
 
 2. **Vendedores:**
-   - ID do Vendedor (Chave Primária)
-   - Código da Loja Física (Chave Estrangeira)
-   - Código do Usuário (Chave Estrangeira)
+   - cod_vendedor (Chave Primária)
+   - Código_loja fisica (Chave Estrangeira)
+   - Código_cliente (Chave Estrangeira)
    - Nome do Vendedor
    - Telefone do Vendedor
    - Campo Admin
 
 3. **Lojas Físicas:**
-   - ID da Loja Física (Chave Primária)
+   - cod_Loja Física (Chave Primária)
    - Nome da Loja
    - Endereço da Loja
    - Telefone da Loja
 
 4. **Fornecedores de Bebidas:**
-   - ID do Fornecedor (Chave Primária)
+   - cod_Fornecedor (Chave Primária)
    - Nome do Fornecedor
 
 5. **Produtos:**
-   - ID do Produto (Chave Primária)
+   - cod_Produto (Chave Primária)
    - Nome do Produto
-   - Código do Fornecedor (Chave Estrangeira)
+   - Código_Fornecedor (Chave Estrangeira)
    - Quantidade em Estoque
 
 6. **Estoque:**
-   - ID do Estoque (Chave Primária)
-   - ID do Produto (Chave Estrangeira)
+   - cod_Estoque (Chave Primária)
+   - cod_Produto (Chave Estrangeira)
    - Quantidade em Estoque
 
 7. **Pedidos:**
-   - ID do Pedido (Chave Primária)
-   - ID do Usuário (Chave Estrangeira)
-   - ID do Vendedor (Chave Estrangeira)
-   - ID da Entrega (Chave Estrangeira)
-   - ID da Forma de Pagamento (Chave Estrangeira)
+   - cod_Pedido (Chave Primária)
+   - cod_Usuário (Chave Estrangeira)
+   - cod_Vendedor (Chave Estrangeira)
+   - cod_Entrega (Chave Estrangeira)
+   - cod_Forma de Pagamento (Chave Estrangeira)
    - Data e Hora do Pedido
    - Status do Pedido (PEDIDO REALIZADO, EM ANDAMENTO, A CAMINHO, ENTREGUE)
    - Valor Total do Pedido
    - Tempo de Espera Atual
 
-8. **Itens do Pedido:**
-   - ID do Item (Chave Primária)
-   - ID do Pedido (Chave Estrangeira)
-   - ID do Produto (Chave Estrangeira)
-   - Quantidade
-   - Valor Unitário
-
 9. **Entregas:**
-   - ID da Entrega (Chave Primária)
-   - ID do Pedido (Chave Estrangeira)
+   - cod_Entrega (Chave Primária)
+   - cod_Pedido (Chave Estrangeira)
    - Status da Entrega (pendente, entregue)
    - Endereço de Entrega
 
 10. **Formas de Pagamento:**
-    - ID da Forma de Pagamento (Chave Primária)
+    - cod_Forma de Pagamento (Chave Primária)
     - Nome da Forma de Pagamento
     - Descrição da Forma de Pagamento
 
 11. **Vendas:**
-    - ID da Venda (Chave Primária)
-    - ID da Loja Física (Chave Estrangeira)
-    - ID do Pedido (Chave Estrangeira)
-    - ID da Forma de Pagamento (Chave Estrangeira)
+    - cod_Venda (Chave Primária)
+    - cod_Loja Física (Chave Estrangeira)
+    - cod_Pedido (Chave Estrangeira)
+    - cod_Forma de Pagamento (Chave Estrangeira)
     - Data da Venda
     - Valor Total da Venda
 
 12. **Relatórios Mensais de Vendas:**
-    - ID do Relatório (Chave Primária)
-    - ID da Loja Física (Chave Estrangeira)
+    - cod_Relatório (Chave Primária)
+    - cod_Loja Física (Chave Estrangeira)
     - Valor Total de Vendas
     - Data de Início do Relatório
     - Data de Fim do Relatório
